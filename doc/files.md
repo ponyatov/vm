@@ -1,0 +1,22 @@
+.vscode/
+    settings.json
+    tasks.json
+    extensions.json
+bin/
+    .gitignore
+doc/
+    files.md
+lib/
+    .gitignore
+inc/
+    .gitignore
+src/
+    .gitignore
+tmp/
+    .gitignore
+Makefile
+README.md
+apt.txt
+.clang-format
+doxy.gen
+rc
