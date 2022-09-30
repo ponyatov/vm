@@ -19,7 +19,7 @@
     // files
     "files.exclude": {
         "docs":true,
-    }
+    },
 
     // editor
     "editor.tabSize": 4,
