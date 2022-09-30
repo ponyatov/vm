@@ -14,15 +14,21 @@
             "problemMatcher": []
         },
         {
+            "label": "git: dev",
+            "type": "shell",
+            "command": "make dev",
+            "problemMatcher": []
+        },
+        {
             "label": "git: shadow",
             "type": "shell",
             "command": "make shadow",
             "problemMatcher": []
         },
         {
-            "label": "git: dev",
+            "label": "git: release",
             "type": "shell",
-            "command": "make dev",
+            "command": "make release",
             "problemMatcher": []
         },
     ]
