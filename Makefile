@@ -2,7 +2,8 @@
 MODULE = $(notdir $(CURDIR))
 
 # tool
-CF = clang-format
+CURL = curl -L -o
+CF   = clang-format
 
 # src
 C  += src/$(MODULE).cpp
@@ -32,9 +33,17 @@ tmp/$(MODULE).parser.cpp: src/$(MODULE).yacc
 tmp/$(MODULE).lexer.cpp: src/$(MODULE).lex
 	flex -o $@ $<
 
+# doc
+doc: doc/beam-book.pdf
+
+doc/beam-book.pdf:
+	$(CURL) $@ https://github.com/happi/theBeamBook/releases/download/latest/beam-book.pdf
+
 # install
-install:
+install: doc gz
 	$(MAKE) update
 update:
 	sudo apt update
 	sudo apt install -yu `cat apt.txt`
+
+gz:
