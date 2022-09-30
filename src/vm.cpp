@@ -29,5 +29,20 @@ void yyerror(string msg) {
 Object::Object(char* V) { value = V; }
 Object::~Object() {}
 
+string dump(int depth, string prefix) {
+  ostringstream os;
+  os << pad(depth) << head(prefix);
+  return os.str();
+}
+
+#include <cxxabi.h>
+string Object::tag() {
+  string ret = abi::__cxa_demangle(typeid(*this).name(), 0, 0, nullptr);
+  for (char& c : ret) c = tolower(c);
+  return ret;
+}
+
+string Object::val() { return value; }
+
 Primitive::Primitive(char* V) : Object(V) {}
 Sym::Sym(char* V) : Primitive(V) {}
