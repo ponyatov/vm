@@ -1,5 +1,5 @@
 # `vm`
-## Object Virtual Machine
+## Object Graph Virtual Machine
 
 (c) Dmitry Ponyatov <<dponyatov@gmail.com>> 2020 MIT
 
