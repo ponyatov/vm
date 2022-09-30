@@ -72,7 +72,7 @@ dev:
 	git checkout $@
 	git pull -v
 	git checkout shadow -- $(MERGE)
-	$(MAKE) doxy ; git add docs
+	$(MAKE) doxy ; git add -f docs
 
 shadow:
 	git push -v
