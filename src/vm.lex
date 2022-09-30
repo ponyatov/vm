@@ -3,7 +3,7 @@
 %{
     #include "vm.hpp"
     char* yyfile;
-    int yycol=1;
+    int yycolumn=1;
 %}
 
 %option noyywrap yylineno

@@ -6,6 +6,7 @@ void arg(int argc, char* argv) {
 }
 
 int main(int argc, char* argv[]) {
+  init(argc, argv);
   arg(0, argv[0]);
   for (auto i = 1; i < argc; i++) {
     arg(i, argv[i]);
@@ -14,19 +15,19 @@ int main(int argc, char* argv[]) {
     yyparse();
     fclose(yyin);
   }
-  return 0;
+  return fini(0);
 }
 
-#define YYERR                                                             \
-  "\n\n"                                                                  \
-      << yyfile << ":" << yylineno << ":" << yycol << ": " << msg << " [" \
+#define YYERR                                                                \
+  "\n\n"                                                                     \
+      << yyfile << ":" << yylineno << ":" << yycolumn << ": " << msg << " [" \
       << yytext << "]\n\n"
 void yyerror(string msg) {
   cerr << YYERR;
-  exit(-1);
+  fini(-1);
 }
 
-Object::Object(char* V) { value = V; }
+Object::Object(string V) { value = V; }
 Object::~Object() {}
 
 string Object::dump(int depth, string prefix) {
@@ -56,5 +57,21 @@ string Object::tag() {
 
 string Object::val() { return value; }
 
-Primitive::Primitive(char* V) : Object(V) {}
-Sym::Sym(char* V) : Primitive(V) {}
+Primitive::Primitive(string V) : Object(V) {}
+Sym::Sym(string V) : Primitive(V) {}
+
+Container::Container(string V) : Object(V) {}
+Map::Map(string V) : Container(V) {}
+
+Active::Active(string V) : Object(V) {}
+VM::VM(string V) : Active(V), Map(V) {}
+
+VM* vm = nullptr;
+
+void init(int argc, char* argv[]) {
+  assert(vm = new VM("vm"));
+  ((Active*)vm)->set("argc", new Int(argc));
+  cout << ((Active*)vm)->dump() << "\n\n";
+}
+
+int fini(int errorlevel) { exit(errorlevel); }

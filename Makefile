@@ -52,11 +52,12 @@ doxy: doxy.gen
 # install
 install: doc gz
 	$(MAKE) update
-update: src
+update:
 	sudo apt update
 	sudo apt install -yu `cat apt.txt`
+	cd src/AtomVM ; git pull -v
 
-gz:
+gz: src
 
 src: src/AtomVM/README.Md
 
