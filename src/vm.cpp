@@ -29,9 +29,21 @@ void yyerror(string msg) {
 Object::Object(char* V) { value = V; }
 Object::~Object() {}
 
-string dump(int depth, string prefix) {
+string Object::dump(int depth, string prefix) {
   ostringstream os;
   os << pad(depth) << head(prefix);
+  return os.str();
+}
+
+string Object::head(string prefix) {
+  ostringstream os;
+  os << prefix << '<' << tag() << ':' << val() << "> @" << this;
+  return os.str();
+}
+
+string Object::pad(int depth) {
+  ostringstream os("\n");
+  for (auto i = 0; i < depth; i++) os << '\t';
   return os.str();
 }
 

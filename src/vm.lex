@@ -1,3 +1,5 @@
+/** @file 
+    @brief lexer (`flex`) */
 %{
     #include "vm.hpp"
     char* yyfile;
@@ -9,5 +11,5 @@
 %%
 #.*             {}                      // line comment
 [ \t\r\n]+      {}                      // drop spaces
-[^ \t\r\n]+    TOKEN(Sym,SYM)          // symbol
+[^ \t\r\n]+     TOKEN(Sym,SYM)          // symbol
 .               {yyerror("lexer");}     // any undetected char

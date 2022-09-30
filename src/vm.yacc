@@ -1,4 +1,5 @@
 /// @file
+/// @brief syntax parser (`bison`)
 %{
     #include "vm.hpp"
 %}
@@ -10,6 +11,6 @@
 
 %%
 syntax  :
-        | syntax ex { cout << $2->dump(); }
+        | syntax ex { cout << $2->dump() << endl; }
 
 ex : SYM

@@ -6,3 +6,7 @@ USE_MDFILE_AS_MAINPAGE = README.md
 WARN_IF_UNDOCUMENTED   = NO
 RECURSIVE              = YES
 EXCLUDE                = src/AtomVM
+FILE_PATTERNS         += *.lex *.yacc
+EXTENSION_MAPPING      = lex=C++ yacc=C++
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
