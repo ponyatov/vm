@@ -1,3 +1,4 @@
+/// @file
 #include "vm.hpp"
 
 void arg(int argc, char* argv) {
@@ -16,8 +17,17 @@ int main(int argc, char* argv[]) {
   return 0;
 }
 
-#define YYERR "\n\n" << yyfile<<":"<<yylineno << ":" <<yycol<<":"<< msg << "[" << yytext << "]\n\n"
+#define YYERR                                                             \
+  "\n\n"                                                                  \
+      << yyfile << ":" << yylineno << ":" << yycol << ": " << msg << " [" \
+      << yytext << "]\n\n"
 void yyerror(string msg) {
   cerr << YYERR;
   exit(-1);
 }
+
+Object::Object(char* V) { value = V; }
+Object::~Object() {}
+
+Primitive::Primitive(char* V) : Object(V) {}
+Sym::Sym(char* V) : Primitive(V) {}

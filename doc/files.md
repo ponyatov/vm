@@ -1,22 +1,28 @@
+# files
+
+```
 .vscode/
-    settings.json
-    tasks.json
-    extensions.json
+            settings.json
+            tasks.json
+            extensions.json
 bin/
-    .gitignore
+            .gitignore
 doc/
-    files.md
+            files.md
 lib/
-    .gitignore
+            vm.ini
 inc/
-    .gitignore
+            vm.hpp
 src/
-    .gitignore
+            vm.cpp
+            vm.lex
+            vm.yacc
 tmp/
-    .gitignore
+            .gitignore
 Makefile
 README.md
 apt.txt
 .clang-format
 doxy.gen
 rc
+```

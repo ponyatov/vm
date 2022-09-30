@@ -7,4 +7,7 @@
 %option noyywrap yylineno
 
 %%
-.       {yyerror("lexer");}
+#.*             {}                      // line comment
+[ \t\r\n]+      {}                      // drop spaces
+[^ \t\r\n]+    TOKEN(Sym,SYM)          // symbol
+.               {yyerror("lexer");}     // any undetected char
