@@ -23,13 +23,37 @@ extern int fini(int errorlevel);
 /// @defgroup graph object graph
 /// @{
 
-/// base element of the object graph
+/// @defgroup object Object
+
+/// @defgroup gc Garbage Collection
+/// @brief garbage collection & object pool management
+
+/// @brief base class for all object graph elements
+/// @ingroup object
 struct Object {
   /// scalar: object name, string/number value
   string value;
 
+  /// @ingroup gc
+  /// @{
+
+  /// @brief reference counter
+  size_t ref;
+
+  /// @brief linked list of all objects in a system
+  static Object* pool;
+
+  /// @brief previous object in @ref pool
+  Object* prev;
+
+  /// @}
+
   /// @name constructor
 
+  /// @brief construct without @ref value setup
+  /// (for cases with *value type override* -- see @ref Int as a sample)
+  /// @details only object pool fields will be initialized (@ref gc)
+  Object();
   Object(string V);
   virtual ~Object();
 
@@ -56,11 +80,12 @@ struct Object {
 
   /// @name operator
 
-  Object* set(string key,Object* that);
+  Object* set(string key, Object* that);
 };
 
 /// scalar elements
 struct Primitive : Object {
+  Primitive();
   Primitive(string V);
 };
 
@@ -69,10 +94,10 @@ struct Sym : Primitive {
   Sym(string V);
 };
 
-struct Int:Primitive{
-    int value;
-    Int(int N);
-    string val();
+struct Int : Primitive {
+  int value;
+  Int(int N);
+  string val();
 };
 
 struct Container : Object {
@@ -83,15 +108,23 @@ struct Map : Container {
   Map(string V);
 };
 
+/// @defgroup eds Executable Data Structures
+/// @brief (c) homoiconic behaviour for any data structure (code=data)
+/// @{
+
 struct Active : Object {
   Active(string V);
 };
 
-struct VM : Active, Map {
-  VM(string V);
+struct Env : Active {
+  Env(string V);
 };
 
-extern VM* vm;
+/// @brief global environment
+/// (vocabulary + stack + async message queue)
+extern Env* glob;
+
+/// @}
 
 /// @}
 

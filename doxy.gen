@@ -1,4 +1,5 @@
 PROJECT_NAME           = "Object Graph VM"
+PROJECT_LOGO           = doc/logo.png
 GENERATE_LATEX         = NO
 HTML_OUTPUT            = docs
 INPUT                  = README.md doc src inc

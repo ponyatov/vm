@@ -27,8 +27,21 @@ void yyerror(string msg) {
   fini(-1);
 }
 
-Object::Object(string V) { value = V; }
+//////////////////////////////////////////////////////////////////////// Object
+
+Object* Object::pool = nullptr;
+
 Object::~Object() {}
+
+Object::Object() {
+  prev = pool;
+  pool = this;
+  ref = 0;
+}
+
+Object::Object(string V) : Object() {  //
+  value = V;
+}
 
 string Object::dump(int depth, string prefix) {
   ostringstream os;
@@ -57,21 +70,28 @@ string Object::tag() {
 
 string Object::val() { return value; }
 
+///////////////////////////////////////////////////////////////////// Primitive
+
+Primitive::Primitive() : Object() {}
 Primitive::Primitive(string V) : Object(V) {}
+
 Sym::Sym(string V) : Primitive(V) {}
+
+Int::Int(int N) : Primitive() { value = N; }
+string Int::val() { return to_string(value); }
 
 Container::Container(string V) : Object(V) {}
 Map::Map(string V) : Container(V) {}
 
 Active::Active(string V) : Object(V) {}
-VM::VM(string V) : Active(V), Map(V) {}
+Env::Env(string V) : Active(V) {}
 
-VM* vm = nullptr;
+Env* glob = nullptr;
 
 void init(int argc, char* argv[]) {
-  assert(vm = new VM("vm"));
-  ((Active*)vm)->set("argc", new Int(argc));
-  cout << ((Active*)vm)->dump() << "\n\n";
+  assert(glob = new Env("global"));
+  glob->set("argc", new Int(argc));
+  cout << glob->dump() << "\n\n";
 }
 
 int fini(int errorlevel) { exit(errorlevel); }

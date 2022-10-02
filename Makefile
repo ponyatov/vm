@@ -40,12 +40,16 @@ tmp/$(MODULE).lexer.cpp: src/$(MODULE).lex
 	flex -o $@ $<
 
 # doc
-doc: doc/beam-book.pdf doc/Starting-FORTH.pdf
+doc: doc/beam-book.pdf doc/Starting-FORTH.pdf doc/11419.pdf
 
 doc/beam-book.pdf:
 	$(CURL) $@ https://github.com/happi/theBeamBook/releases/download/latest/beam-book.pdf
 doc/Starting-FORTH.pdf:
 	$(CURL) $@ https://www.forth.com/wp-content/uploads/2018/01/Starting-FORTH.pdf
+doc/11419.pdf:
+	$(CURL) $@ http://2.180.2.83:801/opac/temp/11419.pdf
+
+
 doxy: doxy.gen
 	rm -rf docs ; doxygen $< 1>/dev/null
 
