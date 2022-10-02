@@ -1,2 +1,3 @@
 AtomVM/
+wasm-micro-runtime/
 !.gitignore

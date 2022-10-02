@@ -28,7 +28,7 @@ all: bin/$(MODULE) lib/$(MODULE).ini
 format: tmp/fortmat_cpp doxy
 
 tmp/fortmat_cpp: $(C) $(H)
-	$(CF) -style=google -i $? && touch $@
+	$(CF) -style=file -i $? && touch $@
 
 # rule
 bin/$(MODULE): $(C) $(H) $(CP) $(HP)
@@ -51,9 +51,8 @@ doc/Starting-FORTH.pdf:
 	$(CURL) $@ https://www.forth.com/wp-content/uploads/2018/01/Starting-FORTH.pdf
 doc/thinking-forth-color.pdf:
 	$(CURL) $@ http://prdownloads.sourceforge.net/thinking-forth/thinking-forth-color.pdf
-doc/11419.pdf:
+doc/ADIVM.pdf:
 	$(CURL) $@ http://2.180.2.83:801/opac/temp/11419.pdf
-
 
 doxy: doxy.gen
 	rm -rf docs ; doxygen $< 1>/dev/null
@@ -64,14 +63,19 @@ install: doc gz
 update:
 	sudo apt update
 	sudo apt install -yu `cat apt.txt`
-	cd src/AtomVM ; git pull -v
+	$(MAKE) src
 
 gz: src
 
-src: src/AtomVM/README.Md
+.PHONY: src
+src: src/AtomVM/README.Md src/wasm-micro-runtime/README.md
+	cd src/AtomVM             ; git pull -v
+	cd src/wasm-micro-runtime ; git pull -v
 
 src/AtomVM/README.Md:
 	git clone https://github.com/atomvm/AtomVM.git src/AtomVM
+src/wasm-micro-runtime/README.md:
+	git clone https://github.com/bytecodealliance/wasm-micro-runtime src/wasm-micro-runtime
 
 # merge
 MERGE  = Makefile README.md .clang-format doxy.gen $(S)
