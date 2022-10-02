@@ -45,7 +45,12 @@ Object::Object(string V) : Object() {  //
 
 string Object::dump(int depth, string prefix) {
   ostringstream os;
+  // head
   os << pad(depth) << head(prefix);
+  // slot
+  for (auto const& [key, that] : slot) {
+  }
+  // subtree
   return os.str();
 }
 
@@ -69,6 +74,11 @@ string Object::tag() {
 }
 
 string Object::val() { return value; }
+
+Object* Object::set(string key, Object* that) {
+  slot[key] = that;
+  return this;
+}
 
 ///////////////////////////////////////////////////////////////////// Primitive
 

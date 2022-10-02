@@ -5,7 +5,9 @@
 #include <assert.h>
 
 #include <iostream>
+#include <map>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
@@ -33,6 +35,8 @@ extern int fini(int errorlevel);
 struct Object {
   /// scalar: object name, string/number value
   string value;
+  /// associative array = env/namespace = vocabulary = AST attributes
+  map<string, Object*> slot;
 
   /// @ingroup gc
   /// @{

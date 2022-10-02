@@ -18,7 +18,7 @@ CP += tmp/$(MODULE).parser.cpp tmp/$(MODULE).lexer.cpp
 HP += tmp/$(MODULE).parser.hpp
 
 # cfg
-CFLAGS += -pipe -O0 -g2 -Iinc -Itmp
+CFLAGS += -pipe -O0 -g2 -Iinc -Itmp -std=c++17
 
 # all
 all: bin/$(MODULE) lib/$(MODULE).ini
