@@ -1,24 +1,21 @@
 {
     "multiCommand.commands": [
-        {
-            "command": "multiCommand.f11",
-            "sequence": [
-                "workbench.action.files.saveAll",
-                {"command": "workbench.action.terminal.sendSequence",
-                    "args": {"text": "\u000D clear ; make format \u000D"}}]
-        },
-        {
-            "command": "multiCommand.f12",
-            "sequence": [
-                "workbench.action.files.saveAll",
-                {"command": "workbench.action.terminal.sendSequence",
-                    "args": {"text": "\u000D clear ; make all \u000D"}}]
-        },
+        { "command": "multiCommand.f11",
+            "sequence": [ "workbench.action.files.saveAll",
+                { "command": "workbench.action.terminal.sendSequence",
+                    "args": {"text": "\u000D clear ; LANG=C make doxy \u000D"}}]},
+        { "command": "multiCommand.f12",
+            "sequence": [ "workbench.action.files.saveAll",
+                { "command": "workbench.action.terminal.sendSequence",
+                    "args": {"text": "\u000D clear ; LANG=C make all \u000D"}}]}
     ],
 
     // files
     "files.exclude": {
         "docs":true,
+    },
+    "files.associations": {
+        "*.ini": "fini",
     },
 
     // editor
@@ -34,12 +31,21 @@
     "clang-format.fallbackStyle": "Google",
     "clang-format.style": "file",
 
-    // "C_Cpp.clang_format_fallbackStyle": "Google",
-    // "C_Cpp.clang_format_style": "file",
-
+    // C++
     "[cpp]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true,
-        // "editor.defaultFormatter": "ms-vscode.cpptools",
-    }
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.formatOnSave":     true
+    },
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+
+    // cmake
+    "cmake.buildDirectory":  "${workspaceFolder}/tmp/${workspaceFolderBasename}",
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.configureArgs": [ "-DAPP=${workspaceFolderBasename}" ],
+    "cmake.debugConfig": {
+	    "cwd": "${workspaceFolder}",
+        "args": ["${workspaceFolder}/lib/${workspaceFolderBasename}.ini"]
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.generator": "Unix Makefiles",
 }

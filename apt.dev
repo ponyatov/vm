@@ -1,0 +1,4 @@
+code meld doxygen clang-format
+g++ gdb cmake
+flex bison libreadline-dev
+libpmem-dev

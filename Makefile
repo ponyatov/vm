@@ -13,21 +13,18 @@ CF   = clang-format
 # src
 C  += src/$(MODULE).cpp
 H  += inc/$(MODULE).hpp
-S  += $(C) $(H)
+S  += $(C) $(H) CMakeLists.txt
 CP += tmp/$(MODULE).parser.cpp tmp/$(MODULE).lexer.cpp
 HP += tmp/$(MODULE).parser.hpp
-
-# cfg
-CFLAGS += -pipe -O0 -g2 -Iinc -Itmp -std=c++17
 
 # all
 all: bin/$(MODULE) lib/$(MODULE).ini
 	$^
 
 # format
-format: tmp/fortmat_cpp doxy
-
-tmp/fortmat_cpp: $(C) $(H)
+.PHONY: format
+format: tmp/format_cpp
+tmp/format_cpp: $(C) $(H)
 	$(CF) -style=file -i $? && touch $@
 
 # rule
@@ -54,32 +51,35 @@ doc/thinking-forth-color.pdf:
 doc/ADIVM.pdf:
 	$(CURL) $@ http://2.180.2.83:801/opac/temp/11419.pdf
 
-doxy: doxy.gen
+doxy: .doxygen
 	rm -rf docs ; doxygen $< 1>/dev/null
 
 # install
+.PHONY: install update gz src
 install: doc gz
 	$(MAKE) update
 update:
 	sudo apt update
-	sudo apt install -yu `cat apt.txt`
+	sudo apt install -yu `cat apt.dev apt.txt`
 	$(MAKE) src
 
 gz: src
 
 .PHONY: src
-src: src/AtomVM/README.Md src/wasm-micro-runtime/README.md
-	cd src/AtomVM             ; git pull -v
-	cd src/wasm-micro-runtime ; git pull -v
+src:
 
-src/AtomVM/README.Md:
-	git clone https://github.com/atomvm/AtomVM.git src/AtomVM
-src/wasm-micro-runtime/README.md:
-	git clone https://github.com/bytecodealliance/wasm-micro-runtime src/wasm-micro-runtime
+# src: src/AtomVM/README.Md src/wasm-micro-runtime/README.md
+# 	cd src/AtomVM             ; git pull -v
+# 	cd src/wasm-micro-runtime ; git pull -v
+
+# src/AtomVM/README.Md:
+# 	git clone https://github.com/atomvm/AtomVM.git src/AtomVM
+# src/wasm-micro-runtime/README.md:
+# 	git clone https://github.com/bytecodealliance/wasm-micro-runtime src/wasm-micro-runtime
 
 # merge
 MERGE  = Makefile README.md .clang-format doxy.gen $(S)
-MERGE += apt.txt
+MERGE += apt.dev apt.txt
 MERGE += .vscode bin doc lib inc src tmp
 
 dev:
