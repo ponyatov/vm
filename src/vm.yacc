@@ -11,6 +11,6 @@
 
 %%
 syntax  :
-        | syntax ex { cout << $2->dump() << endl; }
+        | syntax ex { std::cout << $2->dump() << std::endl; }
 
 ex : SYM
