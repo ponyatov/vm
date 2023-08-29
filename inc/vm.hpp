@@ -52,12 +52,9 @@ struct Object {
 
     /// @name constructor
 
-    /// @brief construct without @ref value setup
-    /// (for cases with *value type override* -- see @ref Int as a sample)
-    /// @details only object pool fields will be initialized (@ref gc)
-    Object();
-    Object(std::string V);
-    virtual ~Object();
+    Object();               ///< construct without @ref value setup (@ref gc only)
+    Object(std::string V);  ///< construct with object name
+    virtual ~Object();      ///< free memory & @ref gc
 
     /// @name dump/stringify
 
