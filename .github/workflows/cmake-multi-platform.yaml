@@ -10,15 +10,16 @@ jobs:
         steps:
           - uses: actions/checkout@v4
           - run: sudo apt-get install -uy `cat apt.Ubuntu`
-          - run: cmake --preset linux
+          - run: cmake --preset linux -DBRANCH=${GITHUB_REF_NAME}
           - run: cmake --build --preset linux
+          - run: make doxy
           - run: |
               APP=$(basename "$PWD")
               TAG=${GITHUB_REF#refs/tags/}
               DATE=$(date +%Y%m%d)
               NAME="${APP}_${TAG}_${DATE}"
               echo "${NAME}"
-              zip tmp/${NAME}.zip bin/*linux* bin/*win32* lib/*.ini lib/*.u || true
+              zip tmp/${NAME}.zip bin/*linux* bin/*win32* lib/*.ini lib/*.u README.md doc vscode || true
           - uses: softprops/action-gh-release@v1
             with:
               files: |
