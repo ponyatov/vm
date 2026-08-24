@@ -1,4 +1,4 @@
-name: CMake automatic build for multiple platforms
+name: tagged release build
 
 on:
     release:
@@ -14,10 +14,9 @@ jobs:
           - run: cmake --build --preset linux
           - run: |
               APP=$(basename "$PWD")
-              BRANCH=$(git rev-parse --abbrev-ref HEAD)
+              TAG=${GITHUB_REF#refs/tags/}
               DATE=$(date +%Y%m%d)
-              HASH=$(git rev-parse --short=4 HEAD)
-              NAME="${APP}_${BRANCH}_${DATE}_${HASH}"
+              NAME="${APP}_${TAG}_${DATE}"
               zip tmp/${NAME}.zip bin/*linux* bin/*win32* lib/*.ini lib/*.u || true
           - uses: softprops/action-gh-release@v1
             with:
