@@ -1,3 +1,4 @@
 git make curl
-g++ cmake pkg-config doxygen
+g++ cmake pkg-config
+doxygen graphviz
 flex bison ragel libreadline-dev
