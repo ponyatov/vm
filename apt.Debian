@@ -3,4 +3,3 @@ code meld unison
 g++ cmake pkg-config clang-format
 gdb gdbserver valgrind doxygen
 flex bison ragel libreadline-dev
-qt6-base-dev qt6-tools-dev
