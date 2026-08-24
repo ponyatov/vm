@@ -1,4 +1,5 @@
 %{
+    #include "lib.hpp"
     #include "syntax.hpp"
     #include "compiler.hpp"
     #include "debug.hpp"
