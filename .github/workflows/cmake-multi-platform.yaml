@@ -21,5 +21,9 @@ jobs:
               zip tmp/${NAME}.zip bin/*linux* bin/*win32* lib/*.ini lib/*.u || true
           - uses: softprops/action-gh-release@v1
             with:
-              files: tmp/*.zip bin/*linux* bin/*win32* lib/*.ini
+              files: |
+                tmp/*.zip
+                bin/*linux*
+                bin/*win32*
+                lib/*.ini
               fail_on_unmatched_files: false
