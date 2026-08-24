@@ -1,4 +1,4 @@
-# ![logo]{vscode/logo.png} `vm`
+# ![logo](vscode/logo.png) `vm`
 ## bytecode virtual machine
 
 (c) Dmitry Ponyatov <<dponyatov@gmail.com>> 2026 MIT
