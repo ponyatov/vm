@@ -2,7 +2,7 @@
 # unison vm
 
 root = ./doc/vm
-root = /home/dponyatov/metadoc/vm
+root = ../metadoc/vm
 
 prefer = newer
 watch = true

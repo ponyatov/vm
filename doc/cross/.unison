@@ -2,7 +2,7 @@
 # unison cross
 
 root = ./doc/cross
-root = /home/dponyatov/metadoc/cross
+root = ../metadoc/cross
 
 prefer = newer
 watch = true
