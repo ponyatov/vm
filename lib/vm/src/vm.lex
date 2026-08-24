@@ -1,4 +1,5 @@
 %{
+    #include "lib.hpp"
     #include "syntax.hpp"
     #include "vm.yacc.hpp"
     #include "command.hpp"
