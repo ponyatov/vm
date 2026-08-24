@@ -1,0 +1,3 @@
+/// @defgroup i386 i386
+/// @brief 32-bit (legacy @ref pc s, tiny memory systems & PC104)
+/// @ingroup x86

@@ -1,5 +1,6 @@
 # `vm`
 ## [[vm/bytecode]] [[vm/Virtual Machine|Virtual Machine]]
+### embedded language script engine
 
 (c) [[Dmitry Ponyatov]] <<dponyatov@gmail.com>> 2026 [[license/MIT|MIT]]
 

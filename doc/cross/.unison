@@ -1,8 +1,8 @@
-# ln -fs ~/vm/.unison ~/.unison/vm.prf
-# unison vm
+# ln -fs ~/metadoc/cross/.unison ~/.unison/cross.prf
+# unison cross
 
-root = ./doc/vm
-root = /home/dponyatov/metadoc/vm
+root = ./doc/cross
+root = /home/dponyatov/metadoc/cross
 
 prefer = newer
 watch = true

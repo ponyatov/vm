@@ -1,0 +1,5 @@
+/// @defgroup x86 x86
+/// @ingroup arch
+/// @defgroup x86_64 x86_64
+/// @brief 64-bit (modern x86 @ref cpu s)
+/// @ingroup x86
