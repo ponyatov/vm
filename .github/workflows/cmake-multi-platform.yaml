@@ -1,0 +1,22 @@
+name: CMake automatic build for multiple platforms
+
+on:
+    push:
+        branches: ['dponyatov']
+    pull_request:
+        branches: ['dponyatov']
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            # - name: Checkout repository
+            #   uses: actions/checkout@v4
+            - name: Print environment
+              run: |
+                echo "Current directory: $(pwd)"
+                echo "Files: $(ls -la)"
+                echo "CMake version: $(cmake --version)"
+                echo "Compiler: $(gcc --version)"
+                echo "Environment:"
+                env

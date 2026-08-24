@@ -9,7 +9,7 @@
     },
     "files.associations": {
         "*.linux": "properties", "*.uclibc": "properties",
-        "*.ini": "properties", "*.f": "properties"
+        "*.ini": "u", "*.u": "u"
     },
 
     // editor

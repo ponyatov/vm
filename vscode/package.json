@@ -1,20 +1,23 @@
 {
     "name": "u",
-    "displayName": "u embedded language",
+    "displayName": "μ embedded language",
     "description": "bytecode virtual machine (embedded language script engine)",
     "version": "0.0.1",
     "publisher": "dponyatov",
-    "logo": "logo.png",
+    "icon": "logo.png",
     "engines": {
         "vscode": "^1.85.0"
     },
     "categories": [
         "Programming Languages"
     ],
+    "license": "MIT",
+    "keywords": ["bytecode", "embedded", "scripting", "FORTH"],
     "contributes": {
         "languages": [
             {
                 "id": "u",
+                "aliases": ["u"],
                 "extensions": [".ini",".u"],
                 "configuration": "./u.language.json"
             }
@@ -23,7 +26,7 @@
             {
                 "language": "u",
                 "scopeName": "source.u",
-                "path": "./syntaxes/u.tmLanguage.json"
+                "path": "./u.tmLanguage.json"
             }
         ]
     }
