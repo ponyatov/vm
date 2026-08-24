@@ -14,3 +14,8 @@ jobs:
           - run: sudo apt-get install -uy `cat apt.Ubuntu`
           - run: cmake --preset linux
           - run: cmake --build --preset linux
+          - name: Upload artifacts
+            uses: actions/upload-artifact@v4
+            with:
+              name: build-artifacts
+              path: build/
