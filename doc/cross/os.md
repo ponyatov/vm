@@ -1,22 +1,17 @@
 # os/
 
-## inc/os/[[os.hpp]]
-## linux
-
-- host-side generic Linux target
-- cross-compiled minimal embedded Linux
-	- [[cross/linux|linux]]
-	- [[cross/uclibc|uclibc]]
-	- [[cross/busybox|busybox]]
-
 ```
 os/
+	inc/
+		os.hpp
 	linux/
-		linux.mk
-		all.linux
-		all.uclibc
 		inc/
-			linux.hpp
-		src/
-			main.cpp
+			linux.hpp       # Server/Desktop/Embedded Linux
+	win32/
+		inc/
+			 win32.hpp      # MinGW/i386
 ```
+
+## inc/os/[[os.hpp]]
+
+## [[cross/linux]]

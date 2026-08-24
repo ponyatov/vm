@@ -8,4 +8,5 @@ lib/
 		src/
 ```
 
-![[vm/cross]]
+![[cross/cross#source]]
+

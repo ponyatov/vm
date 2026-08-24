@@ -1,4 +1,8 @@
-# `u` embedded language syntax
+# `μ` embedded language
+
+## syntax
+
+- `:id` global label
 
 ## [[vm/files]]
 

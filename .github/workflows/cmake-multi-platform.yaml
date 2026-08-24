@@ -10,8 +10,8 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            # - name: Checkout repository
-            #   uses: actions/checkout@v4
+            - name: Checkout repository
+              uses: actions/checkout@v4
             - name: Print environment
               run: |
                 echo "Current directory: $(pwd)"
