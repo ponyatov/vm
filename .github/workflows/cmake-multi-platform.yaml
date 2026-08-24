@@ -11,6 +11,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v4
-          - run: apt install -uy `cat apt.Ubuntu`
+          - run: sudo apt-get install -uy `cat apt.Ubuntu`
           - run: cmake --preset linux
           - run: cmake --build --preset linux
