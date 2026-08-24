@@ -10,35 +10,7 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-
-            # - name: Checkout repository
-            #   uses: actions/checkout@v4
-
-            - name: Print environment
-              run: |
-                  echo "Current directory: $(pwd)"
-                  echo "Files: $(ls -la)"
-                  echo "CMake version: $(cmake --version)"
-                  echo "Compiler: $(gcc --version)"
-                  echo "Environment:"
-                  env
-
-            # - name: Install dependencies
-            #   run: |
-            #       sudo apt-get update
-            #       sudo apt-get install -y \
-            #         build-essential \
-            #         cmake \
-            #         flex \
-            #         bison \
-            #         ragel \
-            #         gcc \
-            #         g++
-
-            # - name: Configure CMake
-            #     run: |
-            #       cmake --preset linux
-
-            # - name: Build
-            #   run: |
-            #     cmake --build --preset linux
+          - uses: actions/checkout@v4
+          - run: echo "Workflow works!"
+          - run: ls -la
+          - run: cmake --version
