@@ -1,3 +1,6 @@
+# lib/vm/inc/memory.hpp
+
+```cpp
 /// @defgroup memory memory
 /// @brief @ref vm memory
 /// @ingroup vm
@@ -11,3 +14,7 @@ extern addr Cp;      ///< compiler pointer
 extern addr Ip;      ///< instruction pointer
 
 /// @}
+```
+- [[vm/M]]
+- [[vm/Cp]]
+- [[vm/Ip]]

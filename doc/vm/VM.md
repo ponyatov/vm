@@ -6,6 +6,10 @@
 
 github: https://github.com/ponyatov/vm/tree/dponyatov
 
+
+- [[memory.hpp]]
+- [[types.hpp]]
+
 ## [[virtualization]]
 - [[hypervizor]]
 - [[KVM]]

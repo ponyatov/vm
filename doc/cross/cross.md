@@ -11,6 +11,7 @@
 - [[cross/cpu|cpu]]
 - [[cross/arch|arch]]
 - [[cross/os|os]]
+- [[cross/lib]]
 
 ## [[cross/yandex|yandex mirrors]]
 ## [[cclibs]]

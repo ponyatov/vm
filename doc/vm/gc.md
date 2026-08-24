@@ -1,4 +1,13 @@
-# garbage collection
+# gc
+## garbage collector
+
+## principles
+
+- allocates heap in a [[VAT]] memory
+- thread-local [[vm/gc|gc]] in every isolated thread (no memory shared between threads)
+- single & very fast heap drop for every thread stop
+
+## 
 
 ##### minimal
 ```Cpp

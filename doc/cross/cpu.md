@@ -1,7 +1,4 @@
 # cpu/
 
-## cpu/inc/cpu.hpp
-```cpp
-/// @defgroup cpu cpu
-/// @ingroup cross
-```
+## cpu/inc/[[cpu.hpp]]
+## cpu/i5/inc/[[i5.hpp]]

@@ -1,4 +1,6 @@
 # os/
+
+## inc/os/[[os.hpp]]
 ## linux
 
 - host-side generic Linux target

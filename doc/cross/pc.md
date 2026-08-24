@@ -5,9 +5,6 @@
 ```Makefile
 CPU ?= i5
 ```
-## hw/pc/inc/pc.hpp
-```cpp
-/// @defgroup pc pc
-/// @ingroup hw
-```
+## hw/pc/inc/[[pc.hpp]]
+
 ## hw/pc/src/pc.cpp

@@ -4,7 +4,4 @@
 /// @defgroup linux linux
 /// @brief Server/Desktop/Embedded Linux
 /// @ingroup os
-#pragma once
-
-#include "posix.hpp"
 ```
