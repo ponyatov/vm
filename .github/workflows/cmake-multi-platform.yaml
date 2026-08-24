@@ -12,7 +12,14 @@ jobs:
           - run: sudo apt-get install -uy `cat apt.Ubuntu`
           - run: cmake --preset linux
           - run: cmake --build --preset linux
+          - run: |
+              APP=$(basename "$PWD")
+              BRANCH=$(git rev-parse --abbrev-ref HEAD)
+              DATE=$(date +%Y%m%d)
+              HASH=$(git rev-parse --short=4 HEAD)
+              NAME="${APP}_${BRANCH}_${DATE}_${HASH}"
+              zip tmp/${NAME}.zip bin/*linux* bin/*win32* lib/*.ini lib/*.u || true
           - uses: softprops/action-gh-release@v1
             with:
-              files: bin/*_linux_*
+              files: tmp/${NAME}.zip
               fail_on_unmatched_files: false
