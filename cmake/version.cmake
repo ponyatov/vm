@@ -1,9 +1,13 @@
+if(DEFINED ENV{GITHUB_REF_NAME})
+    set(BRANCH "$ENV{GITHUB_REF_NAME}")
+else()
 execute_process(
     OUTPUT_VARIABLE BRANCH
     COMMAND git rev-parse --abbrev-ref HEAD
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     OUTPUT_STRIP_TRAILING_WHITESPACE
 )
+endif()
 
 execute_process(
     OUTPUT_VARIABLE NOW

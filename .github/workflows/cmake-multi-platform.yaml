@@ -19,7 +19,7 @@ jobs:
               DATE=$(date +%Y%m%d)
               NAME="${APP}_${TAG}_${DATE}"
               echo "${NAME}"
-              zip tmp/${NAME}.zip bin/*linux* bin/*win32* lib/*.ini lib/*.u README.md doc vscode || true
+              zip -r tmp/${NAME}.zip bin/${APP}* lib/*.ini lib/*.u README.md doc vscode || true
           - uses: softprops/action-gh-release@v1
             with:
               files: |
