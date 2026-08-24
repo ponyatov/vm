@@ -1,6 +1,9 @@
-# VM: Virtual Machine
-## [[виртуальная машина]]
+# `vm`
+## [[vm/bytecode]] [[vm/Virtual Machine|Virtual Machine]]
 
+(c) [[Dmitry Ponyatov]] <<dponyatov@gmail.com>> 2026 [[license/MIT|MIT]]
+
+github: https://github.com/ponyatov/vm/tree/dponyatov
 
 ## [[virtualization]]
 - [[hypervizor]]
