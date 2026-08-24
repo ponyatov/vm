@@ -1,3 +1,4 @@
+#include "main.hpp"
 #include "vm.hpp"
 
 int vm() {

@@ -1,4 +1,5 @@
 #include "compiler.hpp"
+#include "main.hpp"
 #include "vm.hpp"
 
 // `( -- )` do nothing (empty command)
@@ -9,6 +10,7 @@ void nop() {  //
 // `( -- )` stop the whole @ref vm
 void halt() {  //
     if (debug) fprintf(stderr, " %s\n", __func__);
+    fini();
     exit(0);
 }
 

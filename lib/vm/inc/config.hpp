@@ -1,6 +1,6 @@
 /// @defgroup config config
 /// @brief @ref vm config
-/// @ingroup vm
+/// @ingroup memory
 /// @{
 
 /// @ref M size, @ref byte s (64K max)
@@ -9,5 +9,7 @@
 #define Rsz 0x100
 /// @ref D size, @ref cell s
 #define Dsz 0x10
+/// @ref P size, @ref segment s
+#define Psz 0x10
 
 /// @}

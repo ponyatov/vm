@@ -3,6 +3,7 @@
 #include "vm.hpp"
 
 int main(int argc, char *argv[]) {  //
+    init();
     arg(0, argv[0]);
     for (int i = 1; i < argc; i++) {  //
         arg(i, argv[i]);

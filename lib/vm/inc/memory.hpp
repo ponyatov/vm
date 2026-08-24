@@ -4,6 +4,7 @@
 /// @{
 
 #include "config.hpp"
+#include "lib.hpp"
 #include "types.hpp"
 
 extern byte M[Msz];  ///< main memory
@@ -17,5 +18,6 @@ extern cell D[Dsz];  ///< data stack
 extern uint8_t Dp;   ///< @ref D pointer
 
 addr fetch(addr a);  ///< fetch @ref addr from memory
+
 
 /// @}

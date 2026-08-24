@@ -6,4 +6,6 @@
 #include <string>
 #include <vector>
 
-#include "posix.hpp"
+#ifdef __linux__
+#include "linux.hpp"
+#endif
