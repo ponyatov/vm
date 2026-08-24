@@ -1,5 +1,5 @@
 PROJECT_NAME           = "vm"
-PROJECT_BRIEF          = "bytecode virtual machine"
+PROJECT_BRIEF          = "bytecode virtual machine (embedded language script engine)"
 PROJECT_LOGO           = vscode/logo.png
 LAYOUT_FILE            = doc/DoxygenLayout.xml
 OUTPUT_DIRECTORY       = doc
