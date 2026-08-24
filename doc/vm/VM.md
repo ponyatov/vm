@@ -7,8 +7,16 @@
 github: https://github.com/ponyatov/vm/tree/dponyatov
 
 
+## ![[vm/registers]]
+
+- [[vm.hpp]]
 - [[memory.hpp]]
 - [[types.hpp]]
+
+## [[vm/syntax]]
+
+![[vm/syntax#compiler]]
+![[vm/syntax#repl]]
 
 ## [[virtualization]]
 - [[hypervizor]]

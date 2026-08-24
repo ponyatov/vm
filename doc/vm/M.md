@@ -2,6 +2,7 @@
 ## main memory
 
 ![[memory.hpp]]
+![[memory.cpp]]
 
 - contains code & data in a single flat memory region
 - limited to 64K (16-bit [[vm/addr|addresses]]) due to [[em/MCU|MCU]] is the main target with tiny SRAM available

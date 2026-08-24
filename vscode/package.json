@@ -1,0 +1,30 @@
+{
+    "name": "u",
+    "displayName": "u embedded language",
+    "description": "bytecode virtual machine (embedded language script engine)",
+    "version": "0.0.1",
+    "publisher": "dponyatov",
+    "logo": "logo.png",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "u",
+                "extensions": [".ini",".u"],
+                "configuration": "./u.language.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "u",
+                "scopeName": "source.u",
+                "path": "./syntaxes/u.tmLanguage.json"
+            }
+        ]
+    }
+}
