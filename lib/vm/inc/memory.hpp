@@ -16,4 +16,6 @@ extern uint8_t Rp;   ///< @ref R pointer
 extern cell D[Dsz];  ///< data stack
 extern uint8_t Dp;   ///< @ref D pointer
 
+addr fetch(addr a);  ///< fetch @ref addr from memory
+
 /// @}

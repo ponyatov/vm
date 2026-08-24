@@ -1,6 +1,6 @@
 # file(GLOB LD -> cmake/any_toolchain.cmake
 
-file(GLOB_RECURSE S CONFIGURE_DEPENDS
+file(GLOB_RECURSE S CONFIGURE_DEPENDS RELATIVE ${CMAKE_SOURCE_DIR}
     src/*.s
     # cross
     hw/${HW}/*.s
@@ -11,7 +11,7 @@ file(GLOB_RECURSE S CONFIGURE_DEPENDS
     lib/src/*.s lib/*/src/*.s
 )
 
-file(GLOB_RECURSE C CONFIGURE_DEPENDS
+file(GLOB_RECURSE C CONFIGURE_DEPENDS RELATIVE ${CMAKE_SOURCE_DIR}
     src/*.c*
     # cross
       hw/src/*.c*   hw/${HW}/src/*.c*
@@ -22,7 +22,7 @@ file(GLOB_RECURSE C CONFIGURE_DEPENDS
     lib/src/*.c* lib/*/src/*.c*
 )
 
-file(GLOB_RECURSE H CONFIGURE_DEPENDS
+file(GLOB_RECURSE H CONFIGURE_DEPENDS RELATIVE ${CMAKE_SOURCE_DIR}
     inc/*.h*
     # cross
       hw/inc/*.h*   hw/${HW}/inc/*.h*
@@ -33,12 +33,13 @@ file(GLOB_RECURSE H CONFIGURE_DEPENDS
     lib/inc/*.h* lib/*/inc/*.h*
 )
 
-file(GLOB_RECURSE INI CONFIGURE_DEPENDS lib/*.ini lib/*.? )
-
-# include dirs
 foreach(h ${H})
     get_filename_component(d ${h} DIRECTORY)
     list(APPEND INC ${d})
 endforeach()
 list(REMOVE_DUPLICATES INC)
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${INC})
+
+file(GLOB_RECURSE INI CONFIGURE_DEPENDS RELATIVE ${CMAKE_SOURCE_DIR}
+    lib/*.ini lib/*.?
+)

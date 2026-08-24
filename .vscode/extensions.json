@@ -1,7 +1,7 @@
 {
     "recommendations": [
         "statiolake.vscode-auto-tab-closer",
-        "stkb.rewrap",
+        "dnut.rewrap-revived",
         "ms-vscode.makefile-tools",
         "IBM.output-colorizer",
         "usernamehw.errorlens",
@@ -18,9 +18,9 @@
         "ms-vscode.cpptools",
         "jeff-hykin.better-cpp-syntax",
         "ms-vscode.cmake-tools",
-        "krosf.vscode-valgrind",
-        "theqtcompany.qt-cpp",
-        "theqtcompany.qt-qml",
+        // "krosf.vscode-valgrind",
+        // "theqtcompany.qt-cpp",
+        // "theqtcompany.qt-qml",
         // parser
         "daohong-emilio.yash",
         "rreverser.ragel",

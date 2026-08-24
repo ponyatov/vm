@@ -1,4 +1,3 @@
-#include "lib.hpp"
 #include "main.hpp"
 #include "syntax.hpp"
 #include "vm.hpp"
@@ -13,6 +12,8 @@ int main(int argc, char *argv[]) {  //
         fclose(yyin);
         yyfile = nullptr;
     }
+    if (debug) fprintf(stderr, "\n\n");
+    dump();
     return vm();
 }
 

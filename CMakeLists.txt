@@ -18,7 +18,7 @@ message("-- |       ini: " "${INI}")
 message("-- |      data: " "${DATA}")
 message("-- |       cpp: " "${C} ${CP}")
 message("-- |       hpp: " "${H} ${HP}")
-message("-- |      libs: " "${L}")
+message("-- |      libs: " "${CMAKE_CXX_IMPLICIT_LINK_LIBRARIES} ${L}")
 message("-- |")
 
 add_executable(${CMAKE_PROJECT_NAME}

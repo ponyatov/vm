@@ -4,6 +4,9 @@
     "patterns": [
         {
             "include": "#comments"
+        },
+        {
+            "include": "#command"
         }
     ],
     "repository": {
@@ -12,6 +15,14 @@
                 {
                     "name": "comment.line.number-sign.u",
                     "match": "#.*$"
+                }
+            ]
+        },
+        "command": {
+            "patterns": [
+                {
+                    "name": "keyword.assembly.u",
+                    "match": "\\b(nop|halt|dump|call|ret|jmp)\\b"
                 }
             ]
         }

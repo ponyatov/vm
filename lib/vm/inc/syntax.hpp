@@ -1,6 +1,6 @@
 /// @defgroup syntax syntax
 /// @brief `flex`/`bison` syntax parsers interface
-/// @ingroup lib
+/// @ingroup compiler
 /// @{
 #pragma once
 

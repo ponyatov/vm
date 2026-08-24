@@ -13,7 +13,7 @@ include(FindPackageHandleStandardArgs)
 # ~~~
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(READLINE REQUIRED readline>=8.2)
+pkg_check_modules(READLINE REQUIRED QUIET readline>=8.2)
 
 if(READLINE_FOUND)
   message("-- Found READLINE: ${READLINE_LIBRARIES} (found version \"${READLINE_VERSION}\")")

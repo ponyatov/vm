@@ -1,33 +1,43 @@
 {
-    "name": "u",
+    "name"       : "u",
     "displayName": "μ embedded language",
     "description": "bytecode virtual machine (embedded language script engine)",
-    "version": "0.0.1",
-    "publisher": "dponyatov",
-    "icon": "logo.png",
+    "version"    : "0.0.1",
+    "icon"       : "logo.png",
+    "publisher"  : "dponyatov",
+    "license"    : "MIT",
+    "homepage"   : "https://github.com/ponyatov/vm",
     "engines": {
         "vscode": "^1.85.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages", "Debuggers"
     ],
-    "license": "MIT",
-    "keywords": ["bytecode", "embedded", "scripting", "FORTH"],
+    "keywords": [
+        "bytecode", "embedded", "script", "interpreter", "FORTH", "CLI", "REPL"
+    ],
+    "bugs": {
+        "url": "https://github.com/ponyatov/vm/issue"
+    },
+    "repository": {
+        "type": "git",
+        "url" : "https://github.com/ponyatov/vm/tree/dponyatov/vscode"
+    },
+    "activationEvents": [
+        "workspaceContains:lib/*.ini",
+        "workspaceContains:lib/*.u"
+    ],
+    "main": "./extension.js",
     "contributes": {
-        "languages": [
-            {
-                "id": "u",
-                "aliases": ["u"],
-                "extensions": [".ini",".u"],
-                "configuration": "./u.language.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "u",
-                "scopeName": "source.u",
-                "path": "./u.tmLanguage.json"
-            }
-        ]
+        "languages": [{
+            "id"           : "u",
+            "extensions"   : [".ini",".u"],
+            "configuration": "./u.language.json"
+        }],
+        "grammars": [{
+            "language" : "u",
+            "scopeName": "source.u",
+            "path"     : "./u.tmLanguage.json"
+        }]
     }
 }

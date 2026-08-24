@@ -5,6 +5,8 @@
 #pragma once
 
 #include "memory.hpp"
+#include "debug.hpp"
+#include "command.hpp"
 
 /// @brief run compiled bytecode
 /// @returns int for fake @ref main () return
