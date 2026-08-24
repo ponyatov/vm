@@ -10,4 +10,7 @@ extern byte M[Msz];  ///< main memory
 extern addr Cp;      ///< compiler pointer
 extern addr Ip;      ///< instruction pointer
 
+extern addr R[Rsz];  ///< return stack
+extern uint8_t Rp;   ///< @ref R pointer
+
 /// @}
