@@ -1,4 +1,4 @@
-# ![logo](vscode/logo.png) `vm`
+# ![logo](vscode/logo.png) `μ/vm`
 ## [[vm/bytecode|bytecode]] virtual machine
 ### embedded language script engine
 
