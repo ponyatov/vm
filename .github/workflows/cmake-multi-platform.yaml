@@ -24,7 +24,6 @@ jobs:
             with:
               files: |
                 tmp/*.zip
-                bin/*linux*
-                bin/*win32*
+                bin/${APP}_*
                 lib/*.ini
               fail_on_unmatched_files: false
