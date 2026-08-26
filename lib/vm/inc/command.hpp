@@ -15,11 +15,11 @@ enum class Op : uint8_t {
     jmp = 0x03,
 };
 
-extern void nop();   ///< `( -- )` do nothing (empty command)
-extern void halt();  ///< `( -- )` stop the whole @ref vm
-extern void dump();  ///< `( -- )` dump @ref vm state
-extern void call();  ///< `(R: -- addr)` nested call
-extern void ret();   ///< `(R: addr -- )` return from @ref call
-extern void jmp();   ///< `( -- )` unconditional jump
+extern void nop();   ///< 00 `( -- )` do nothing (empty command)
+extern void halt();  ///< FF `( -- )` stop the whole @ref vm
+extern void dump();  ///< DD `( -- )` dump @ref vm state
+extern void call();  ///< 01 `(R: -- addr)` nested call
+extern void ret();   ///< 02 `(R: addr -- )` return from @ref call
+extern void jmp();   ///< 03 `( -- )` unconditional jump
 
 /// @}

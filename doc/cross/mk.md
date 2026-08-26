@@ -1,7 +1,23 @@
-# Makefile
+# GNU Make scripts
 
-- mk/var.mk
+# mk/cross.mk
+
 ```Makefile
-HW ?= pc
+HW   ?= pc
+include hw/$(HW)/$(HW).mk
+include cpu/$(CPU)/$(CPU).mk
+include arch/$(ARCH)/$(ARCH).mk
+
+TCC   = $(TARGET)-gcc
+TXX   = $(TARGET)-g++
+TLD   = $(TARGET)-ld
+TOD   = $(TARGET)-objdump
+TSIZE = $(TARGET)-size
+
+include os/$(OS)/$(OS).mk
 ```
-- [[cross/pc]]
+
+## [[cross/hw]]
+## [[cross/cpu]]
+## [[cross/arch]]
+## [[cross/os]]

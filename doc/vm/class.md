@@ -1,3 +1,0 @@
-# class
-#ST #VM 
-

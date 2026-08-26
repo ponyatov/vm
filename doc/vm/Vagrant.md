@@ -1,2 +1,0 @@
-# Vagrant
-## virtual machine

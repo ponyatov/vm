@@ -1,12 +1,8 @@
-/// @defgroup memory memory
-/// @brief @ref vm memory
-/// @ingroup vm
-/// @{
+# [[vm/vm|vm]] memory
 
-#include "config.hpp"
-#include "lib.hpp"
-#include "types.hpp"
+The [[vm/vm|vm]] uses a memory model with separate fixed-size regions for code/data, and multiple stacks:
 
+```cpp
 extern byte M[Msz];  ///< main memory
 extern addr Cp;      ///< compiler pointer
 extern addr Ip;      ///< instruction pointer
@@ -16,7 +12,4 @@ extern byte Rp;      ///< @ref R pointer
 
 extern cell D[Dsz];  ///< data stack
 extern byte Dp;      ///< @ref D pointer
-
-addr fetch(addr a);  ///< fetch @ref addr from memory
-
-/// @}
+```

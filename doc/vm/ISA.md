@@ -1,2 +1,0 @@
-# ISA
-## Instruction Set Architecture

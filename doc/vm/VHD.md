@@ -1,2 +1,0 @@
-# VHD
-## Virtual Hard Disk

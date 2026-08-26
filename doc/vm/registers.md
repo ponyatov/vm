@@ -1,7 +1,0 @@
-- [[vm/M|M]]
-	- [[vm/Cp|Cp]]
-	- [[vm/Ip|Ip]]
-- [[vm/R|R]]
-	- [[Rp]]
-- [[vm/D|D]]
-	- [[Dp]]

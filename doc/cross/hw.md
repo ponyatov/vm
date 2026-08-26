@@ -7,6 +7,8 @@ hw/
 			pc.hpp
 ```
 
+- [[pc]]
+
 ## hw/inc/[[cross.hpp]]
 ## hw/inc/[[hw.hpp]]
 ```cpp
