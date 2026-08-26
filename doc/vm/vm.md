@@ -13,3 +13,4 @@ github: https://github.com/ponyatov/vm/tree/dponyatov
 ## [[vm/command]]
 ## [[vm/memory]]
 ### [[vm/pmem]]
+## [[vm/vscode]]
