@@ -9,5 +9,7 @@ github: https://github.com/ponyatov/vm/tree/dponyatov
 ## [[u|`μ` embedded language]]
 ## [[vm/bytecode|bytecode]]
 ## [[vm/files]]
-## [[vm/memory]]
+## [[vm/bytecode]]
 ## [[vm/command]]
+## [[vm/memory]]
+### [[vm/pmem]]

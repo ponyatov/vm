@@ -13,3 +13,5 @@ extern byte Rp;      ///< @ref R pointer
 extern cell D[Dsz];  ///< data stack
 extern byte Dp;      ///< @ref D pointer
 ```
+
+## [[vm/pmem|paged memory]]
